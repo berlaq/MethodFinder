@@ -22,8 +22,8 @@
   ]]></description>
 
     <change-notes>
-        Fixed performance issues.
-        Project is now available on GITHUB!!
+        Fixed issue on same method names with different parameters.
+        Fixed issue on shortcut for MAC OS.
     </change-notes>
 
     <!-- Product and plugin compatibility requirements.
@@ -43,7 +43,7 @@
 
         <action id="com.methodfinder.methodfinder.MethodFinder" class="com.methodfinder.methodfinder.MethodFinder" text="MethodFinder" description="Available methods for the given class">
             <add-to-group group-id="ToolsMenu" anchor="first"/>
-            <keyboard-shortcut keymap="$default" first-keystroke="shift ctrl G"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="shift ctrl G" second-keystroke="shift ctrl E"/>
         </action>
     </actions>
 

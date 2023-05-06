@@ -32,7 +32,7 @@ public class MethodFinder extends AnAction {
         PsiClass psiClass = PsiShortNamesCache.getInstance(project).getClassesByName(className, GlobalSearchScope.everythingScope(project))[0];
         Map<String, PsiMethod> methods = Arrays.stream(psiClass.getMethods())
                 .filter(method -> method.getModifierList().hasModifierProperty(PsiModifier.PUBLIC))
-                .collect(Collectors.toMap(PsiMethod::getName, method -> method));
+                .collect(Collectors.toMap(name -> name.getName() + name.getParameterList().getText() , method -> method));
 
         JBPopupFactory popupFactory = JBPopupFactory.getInstance();
         popupFactory.createPopupChooserBuilder(new ArrayList<>(methods.keySet()))
