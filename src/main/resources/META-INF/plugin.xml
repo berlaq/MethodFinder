@@ -1,0 +1,50 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
+    <id>com.methodFinder.MethodFinder</id>
+
+    <!-- Public plugin name should be written in Title Case.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
+    <name>MethodFinder</name>
+
+    <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
+    <vendor email="haberal54@gmail.com" url="https://github.com/berlaq">BerkayHaberal</vendor>
+
+    <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
+         Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
+    <description><![CDATA[
+    Find methods of the given class and use its name as string. Just like writing repository methods using Spring Data, this plugin gives you the ability that finding public
+    methods for the given class just in method parameters! It uses the brackets to find the starting of the method and dot (example: findIds(Customer.class, ...)). After comma, you can
+     press Ctrl+Shift+G to see methods available in that given class, then when you select one of them, it gives you the name of the method and return type. This will accelerate your
+     reflection works if you want to use!<br>
+    <em></em>
+  ]]></description>
+
+    <change-notes>
+        Fixed performance issues.
+        Project is now available on GITHUB!!
+    </change-notes>
+
+    <!-- Product and plugin compatibility requirements.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.lang</depends>
+    <depends>com.intellij.java</depends>
+
+    <!-- Extension points defined by the plugin.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
+    <extensions defaultExtensionNs="com.intellij">
+
+    </extensions>
+
+    <actions>
+
+
+        <action id="com.methodfinder.methodfinder.MethodFinder" class="com.methodfinder.methodfinder.MethodFinder" text="MethodFinder" description="Available methods for the given class">
+            <add-to-group group-id="ToolsMenu" anchor="first"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="shift ctrl G"/>
+        </action>
+    </actions>
+
+</idea-plugin>
